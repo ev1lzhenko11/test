@@ -7,16 +7,16 @@ use Bitrix\Main\Error;
 use Bitrix\Main\Web\HttpClient;
 
 /**
- * Class getIPInfo
+ * Class GetIPInfo
  */
-class getIPInfo extends CBitrixComponent
+class GetIPInfo extends CBitrixComponent
 {
     private $HLBLOCK_ID;
     private $ENTITY;
     private $ENTITY_DATA_CLASS;
 
     /**
-     * getIPInfo constructor.
+     * GetIPInfo constructor.
      * @param CBitrixComponent|null $component
      */
     public function __construct(?CBitrixComponent $component = null)
