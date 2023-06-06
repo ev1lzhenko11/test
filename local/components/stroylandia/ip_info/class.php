@@ -7,7 +7,7 @@ use Bitrix\Main\Error;
 use Bitrix\Main\Web\HttpClient;
 
 /**
- * Class HighloadFormAdd
+ * Class getIPInfo
  */
 class getIPInfo extends CBitrixComponent
 {
@@ -16,7 +16,7 @@ class getIPInfo extends CBitrixComponent
     private $ENTITY_DATA_CLASS;
 
     /**
-     * HighloadFormAdd constructor.
+     * getIPInfo constructor.
      * @param CBitrixComponent|null $component
      */
     public function __construct(?CBitrixComponent $component = null)
