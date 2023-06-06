@@ -118,5 +118,3 @@ class GetIPInfo extends CBitrixComponent
         $this->arResult['REQUEST'] = \Bitrix\Main\Context::getCurrent()->getRequest()->getPostList()->toArray();
     }
 }
-
-
