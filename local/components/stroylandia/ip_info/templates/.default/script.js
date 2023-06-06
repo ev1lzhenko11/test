@@ -10,7 +10,10 @@ function highLoadBLockFormSubmit(form) {
         contentType: false,
         success: function(data){
             AJAX_CONTAINER.innerHTML = data;
-            BX('wait_comp_' + AJAX_ID).remove();
+            const WAIT_ICON = BX('wait_comp_' + AJAX_ID);
+            if (WAIT_ICON) {
+                WAIT_ICON.remove();
+            }
         }
     });
 }
