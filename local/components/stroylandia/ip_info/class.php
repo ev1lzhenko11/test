@@ -64,12 +64,14 @@ class GetIPInfo extends CBitrixComponent
         }
     }
 
-    public function getIPstack($IP) {
+    public function getIPstack($IP)
+    {
         $httpClient = new HttpClient();
         return $httpClient->get('http://api.ipstack.com/'.$IP.'?access_key='.$this->arParams['IPSTACK_KEY'].'');
     }
 
-    public function addIPTable($IP, $INFO) {
+    public function addIPTable($IP, $INFO)
+    {
         $arr = [
             "UF_IP" => $IP,
             "UF_IPSTACK" => $INFO
@@ -79,7 +81,8 @@ class GetIPInfo extends CBitrixComponent
         $this->arResult['IP_INFO'] = $arr;
     }
 
-    public function searchIPTable($IP) {
+    public function searchIPTable($IP)
+    {
         $rsData = $this->ENTITY_DATA_CLASS::getList(array(
             'select' => array('UF_IP', 'UF_IPSTACK'),
             'filter' => array('UF_IP' => $IP)
@@ -91,11 +94,13 @@ class GetIPInfo extends CBitrixComponent
         }
     }
 
-    public function validateIP($IP) {
+    public function validateIP($IP)
+    {
         return boolval(filter_var($IP, FILTER_VALIDATE_IP));
     }
 
-    public function getEntity() {
+    public function getEntity()
+    {
         $rsData = \Bitrix\Highloadblock\HighloadBlockTable::getList(array('filter'=>array('NAME'=>$this->arParams['ENTITY_NAME'])));
         if ( !($arData = $rsData->fetch()) ){
             $this->__showError('Хайлоад "'.$this->arParams['ENTITY_NAME'].'" не найден.');
@@ -108,7 +113,8 @@ class GetIPInfo extends CBitrixComponent
         }
     }
 
-    public function getRequest() {
+    public function getRequest()
+    {
         $this->arResult['REQUEST'] = \Bitrix\Main\Context::getCurrent()->getRequest()->getPostList()->toArray();
     }
 }
